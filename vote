@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div  class="bg-container d-flex flex-column justify-content-center">
+            <h2 class="name">Check Voting Eligibility</h2>
+            <img src="c:\Users\CSELAB 2\Downloads\human-icon-png-1904.png" class="image">
+            <div class="container d-flex flex-row justify-content-center">
+                    
+                    <form id="ageForm">
+                    <label  class="para" for="ageInput">Enter name of voter:</label>
+                    <input type="text" id="name" placeholder="Enter your name">
+                    <br>
+                    <label  class="para" for="ageInput">Enter your age:</label>
+                    <input type="number" id="ageInput" placeholder="Enter your age" required>
+                    <br>
+                    <button  class="button"type="submit">Check Eligibility</button>
+                    </form>
+                
+                    <p id="result" class="para"></p>
+                
+                    <script>
+                    
+                    function checkEligibility(event) {
+                        event.preventDefault();             
+                        const age = document.getElementById("ageInput").value;         
+                        if (age >= 18) {
+                        document.getElementById("result").innerText = "You are eligible to vote.";
+                        } else if (age < 18 && age >= 0) {
+                        document.getElementById("result").innerText = "You are not eligible to vote.";
+                        } else {
+                        document.getElementById("result").innerText = "Please enter a valid age.";
+                        }
+                    }
+                    document.getElementById("ageForm").addEventListener("submit", checkEligibility);
+                    </script>
+            </div>
+        </div>
+        
+    </body>
+       
+        
+</html>
+
+
+
+
+.bg-container{
+    background-image:url("https://img.freepik.com/free-vector/geometric-gradient-futuristic-background_23-2149116406.jpg");
+    background-size:cover;
+    height: 100vh;
+}
+.image{
+    height: 45vh;
+    width:45vw;
+    margin-top:10px;
+    margin-left:220px;
+}
+.button{
+    height: 30px;
+    width: 100px;
+    text-align: center;
+}
+.container{
+    padding: 10px;
+    margin-left:80px;
+}
+
+
+.para{
+    color:#ffffff;
+}
+.name{
+    color:#ffffff;
+    text-align:center;
+}
